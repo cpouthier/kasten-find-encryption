@@ -1,16 +1,5 @@
 # 🔐 Kasten Executor Encryption Finder
 
-```{=html}
-<p align="center">
-```
-`<img src="https://img.shields.io/badge/Kubernetes-Kasten-blue" />`{=html}
-`<img src="https://img.shields.io/badge/License-MIT-green" />`{=html}
-`<img src="https://img.shields.io/badge/Bash-Compatible-yellow" />`{=html}
-`<img src="https://img.shields.io/badge/Status-Production%20Ready-brightgreen" />`{=html}
-```{=html}
-</p>
-```
-
 ------------------------------------------------------------------------
 
 ## 📌 Overview
