@@ -8,7 +8,7 @@ set -euo pipefail
 #     NAMESPACE  TIME  ENCRYPTION
 #
 # Usage:
-#   ./find-encryption-table.sh <subjectRef> [k10-namespace] [tail-lines] [mode]
+#   ./find-encryption-table.sh <targetted_namespace> [k10-namespace] [tail-lines] [mode]
 #
 # mode:
 #   all     -> show all matches (default)
@@ -21,8 +21,8 @@ TAIL_LINES="${3:-300000}"
 MODE="${4:-all}"
 
 if [[ -z "$TARGET_NS" ]]; then
-  echo "ERROR: missing SubjectRef (workload namespace)."
-  echo "Usage: $0 <subjectRef> [k10-namespace] [tail-lines] [all|latest]"
+  echo "ERROR: missing targetted namespace."
+  echo "Usage: $0 <targetted_namespace> [k10-namespace] [tail-lines] [all|latest]"
   exit 1
 fi
 

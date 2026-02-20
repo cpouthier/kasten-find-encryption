@@ -6,15 +6,13 @@
 
 **Kasten Executor Encryption Finder** is a lightweight Bash tool that
 scans all Kasten executor pods and extracts the **actual encryption
-algorithm** used by the datapath for a given workload (`SubjectRef`).
+algorithm** used by the datapath for a given namespace (`SubjectRef`).
 
 It is designed for:
 
 -   🔎 Fast troubleshooting\
 -   🔐 Encryption validation\
 -   📊 Security audits\
--   🧪 Homelab and production environments\
--   🏢 Compliance verification (NIS2 / DORA / ISO27001 context)
 
 ------------------------------------------------------------------------
 
@@ -71,13 +69,13 @@ chmod +x find-encryption-table.sh
 ### 2️⃣ Run
 
 ``` bash
-./find-encryption-table.sh <subjectRef>
+./find-encryption-table.sh <targetted_namespace>
 ```
 
-Example:
+Or
 
 ``` bash
-./find-encryption-table.sh pihole
+./find-encryption-table.sh <targetted_namespace> 30000 lastest
 ```
 
 ------------------------------------------------------------------------
@@ -85,14 +83,14 @@ Example:
 ## ⚙️ Usage
 
 ``` bash
-./find-encryption-table.sh <subjectRef> [k10-namespace] [tail-lines] [mode]
+./find-encryption-table.sh <targetted_namespace> [k10-namespace] [tail-lines] [mode]
 ```
 
 ### Parameters
 
   Parameter       Description                    Default
   --------------- ------------------------------ --------------
-  subjectRef      Workload namespace to search   **required**
+  targetted_namespace      Workload namespace to search   **required**
   k10 namespace   Kasten namespace               `kasten-io`
   tail lines      Log depth per pod              `300000`
   mode            `all` or `latest`              `all`
@@ -103,7 +101,7 @@ Example:
 
     NAMESPACE           TIME                                ENCRYPTION
     ---------           ----                                ----------
-    myns              2026-02-20T00:01:15.558379961Z     AES256-GCM-HMAC-SHA256
+    targetted_namespace 2026-02-20T00:01:15.558379961Z     AES256-GCM-HMAC-SHA256
 
 ------------------------------------------------------------------------
 
