@@ -75,7 +75,7 @@ chmod +x find-encryption-table.sh
 Or
 
 ``` bash
-./find-encryption-table.sh <targetted_namespace> 30000 lastest
+./find-encryption-table.sh <targetted_namespace> 30000 latest
 ```
 
 ------------------------------------------------------------------------
